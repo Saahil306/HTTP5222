@@ -50,6 +50,14 @@ Visit in your browser:
 http://localhost:3000/admin/products
 
 
+2. Depolyed on rendered
+Pages deployed on render
+https://business-admin-dashboard.onrender.com/admin/products
+https://business-admin-dashboard.onrender.com/admin/services
+
+Api with jSon reponses are deployed on 
+https://business-admin-dashboard.onrender.com/api/products
+https://business-admin-dashboard.onrender.com/api/services
 
 ✍️ Author
 Saahil Sayed
