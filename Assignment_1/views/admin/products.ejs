@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Products</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Products</h1>
+
+  <form action="/admin/products" method="POST">
+    <input type="text" name="name" placeholder="Product Name" required><br>
+    <textarea name="description" placeholder="Description"></textarea><br>
+    <input type="number" name="price" placeholder="Price" required><br>
+    <label>
+      <input type="checkbox" name="available"> Available
+    </label><br>
+    <button type="submit">Add Product</button>
+  </form>
+
+  <h2>All Products</h2>
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <strong><%= product.name %></strong> - $<%= product.price %>
+        <form action="/admin/products/delete/<%= product._id %>" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

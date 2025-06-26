@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Services</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Services</h1>
+
+  <form action="/admin/services" method="POST">
+    <input type="text" name="name" placeholder="Service Name" required><br>
+    <textarea name="summary" placeholder="Summary"></textarea><br>
+    <input type="text" name="duration" placeholder="Duration (e.g., 1 hour)"><br>
+    <label>
+      <input type="checkbox" name="active"> Active
+    </label><br>
+    <button type="submit">Add Service</button>
+  </form>
+
+  <h2>All Services</h2>
+  <ul>
+    <% services.forEach(service => { %>
+      <li>
+        <strong><%= service.name %></strong> - <%= service.duration %>
+        <form action="/admin/services/delete/<%= service._id %>" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
